@@ -14,6 +14,8 @@
 
 RNFactory = {}
 
+-- TODO: FIXME: Remove next lines, unused globals
+--[[
 contentCenterX = nil
 contentCenterY = nil
 contentHeight = nil
@@ -28,11 +30,15 @@ viewableContentHeight = nil
 viewableContentWidth = nil
 HiddenStatusBar = "HiddenStatusBar"
 CenterReferencePoint = "CenterReferencePoint"
+]]
 
 RNFactory.screen = RNScreen:new()
 
+-- TODO: FIXME: Remove next lines, unused globals
+--[[
 groups = {}
 groups_size = 0
+]]
 
 RNFactory.mainGroup = RNGroup:new()
 RNFactory.mainGroup.name = "mainGroup"
@@ -60,9 +66,9 @@ function RNFactory.init()
 
     -- TODO: FIXME: Remove next lines, unused globals
     -- landscape, device, sizes, screenX, screenY = nil
-    screenX, screenY = nil
 
-    local name = rawget(_G, 'name') -- looking for *global* 'name'
+
+    local name = config.window_title
     if name == nil then
         name = "mainwindow"
     end
@@ -191,7 +197,7 @@ function RNFactory.init()
 
 
 
-    RNInputManager.setGlobalRNScreen(RNFactory.screen)
+    RNInputManager.setGlobalRNScreen(screen)
 end
 
 function RNFactory.calculateTouchValues()
