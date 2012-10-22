@@ -52,7 +52,7 @@ function RNFactory.init()
         lwidth, lheight, screenlwidth, screenHeight = config.sizes[config.device][1], config.sizes[config.device][2], config.sizes[config.device][3], config.sizes[config.device][4]
     end
 
-    if config.landscape == true then -- flip lwidths and Hieghts
+    if config.landscape == true then -- flip widths and heights
         lwidth, lheight = lheight, lwidth
         screenlwidth, screenHeight = screenHeight, screenlwidth
     end
