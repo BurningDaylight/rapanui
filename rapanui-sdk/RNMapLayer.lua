@@ -158,13 +158,18 @@ function RNMapLayer:initLayer(x, y, tileset, drawmode)
 
     self.grid:setSize(self:getCols(), self:getRows(), tileset:getTileWidth(), tileset:getTileHeight(), 0, 0, tileset:getTileWidth(), tileset:getTileHeight())
 
+    local tile_idx_delta = 0
+    if tileset.firstgid then
+      tile_idx_delta = tileset.firstgid - 1
+    end
+
     for row = 0, self:getRows() - 1 do
         local cols = {}
         for col = 0, self:getCols() - 1 do
             local tileIdx = self:getTilesAt(row, col)
             local tileIsPhysical = tileset:getPropertyValueForTile(tileIdx, "isPhysical")
             if tileIsPhysical == nil then
-                table.insert(cols, tileIdx)
+                table.insert(cols, tileIdx - tile_idx_delta)
             else
                 table.insert(cols, 0)
             end
