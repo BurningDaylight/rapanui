@@ -145,7 +145,9 @@ end
 
 
 function RNMapLayer:setLevel(level)
+  if self.prop then
     self.prop:setPriority(level)
+  end
 end
 
 function RNMapLayer:getProp()
