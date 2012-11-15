@@ -204,7 +204,7 @@ function RNTiledMapParser.parseNode(node, map)
                             end
                         end
 
-                        if value.children ~= nill and value.children.properties ~= nil then
+                        if value.children ~= nil and value.children.properties ~= nil then
                             if map.objectgroups[map.objectgroupsSize].objects[currentName].properties == nil then
                                 map.objectgroups[map.objectgroupsSize].objects[currentName].properties = {}
                             end
