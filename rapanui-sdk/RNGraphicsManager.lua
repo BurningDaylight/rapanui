@@ -52,9 +52,12 @@ function RNGraphicsManager:allocateTileset(image, tileW, tileH)
     moaiimage:load(image, MOAIImage.TRUECOLOR + MOAIImage.PREMULTIPLY_ALPHA)
     object.width, object.height = moaiimage:getSize()
 
+    local tilecols = math.floor(object.width / tileW)
+    local tilerows = math.floor(object.height / tileH)
+
     object.deck = MOAITileDeck2D.new()
     object.deck:setTexture(object.path)
-    object.deck:setSize(object.width / tileW, object.height / tileH)
+    object.deck:setSize(tilecols, tilerows, tileW / object.width, tileH / object.height)
     object.deck:setRect(-0.5, 0.5, 0.5, -0.5)
 
     moaiimage = nil
