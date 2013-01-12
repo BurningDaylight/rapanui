@@ -84,6 +84,7 @@ function RNMapTileset:getTileImage(tileid)
             self.image.width = width
             self.image.height = height
             self.srcMoaiImage = src
+            -- Maybe we should use math.floor() here?
             self.tilescols = self.image.width / self.tilewidth
             self.tilesrows = self.image.height / self.tileheight
 
@@ -91,6 +92,7 @@ function RNMapTileset:getTileImage(tileid)
             self.srcMoaiImage = src
         end
 
+        -- Maybe we should use math.floor() here?
         self.tilescols = self.image.width / self.tilewidth
         self.tilesrows = self.image.height / self.tileheight
 
