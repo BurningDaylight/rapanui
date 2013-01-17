@@ -244,7 +244,7 @@ function RNGroup:removeChild(id)
     self.numChildren = table.getn(self.displayObjects)
 end
 
-function RNGroup:inserLevel(level)
+function RNGroup:insertLevel(level)
     self.levels[level] = level
 end
 
