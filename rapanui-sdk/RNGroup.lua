@@ -36,7 +36,7 @@ local function fieldChangedListener(self, key, value)
         end
 
 
-        for i = 1, self.numChildren, 1 do
+        for i = 1, self.numChildren do
             local anObject = self.displayObjects[i]
             anObject.x = anObject.x + deltax
         end
@@ -61,7 +61,7 @@ local function fieldChangedListener(self, key, value)
             deltay = -deltay
         end
 
-        for i = 1, self.numChildren, 1 do
+        for i = 1, self.numChildren do
             local anObject = self.displayObjects[i]
             anObject.y = anObject.y + deltay
         end
@@ -229,7 +229,7 @@ end
 function RNGroup:removeChild(id)
     local len = table.getn(self.displayObjects)
     local ind = id
-    for i = 1, len, 1 do
+    for i = 1, len do
         if (i == ind) then
             for k = ind + 1, len, 1 do
                 self.displayObjects[k - 1] = self.displayObjects[k]
