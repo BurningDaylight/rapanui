@@ -165,6 +165,7 @@ end
 function RNMap:setLevel(level)
     for key, value in pairs(self.layers) do
         value:setLevel(level)
+        level = level + 1
     end
 end
 
