@@ -86,6 +86,18 @@ function RNTiledMapParser.parseNode(node, map)
                 end
             end
 
+            if node.children.tileoffset then
+              map.tilesets[map.tilesetsSize].tileoffset = {}
+              for key, value in pairs(node.children.tileoffset) do
+                for key, value in pairs(value.attributes) do
+                  if tonumber(value) ~= nil then
+                    value = tonumber(value)
+                  end
+                  map.tilesets[map.tilesetsSize].tileoffset[key] = value
+                end
+              end
+            end
+
             -- find properties for tileset
             if node.children.properties then
                 if map.tilesets[map.tilesetsSize].properties == nil then

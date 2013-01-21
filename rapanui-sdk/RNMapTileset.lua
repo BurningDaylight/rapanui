@@ -40,6 +40,14 @@ function RNMapTileset:getTileHeight()
     return self.tileheight
 end
 
+function RNMapTileset:getTileOffsetX()
+  return self.tileoffset and self.tileoffset.x or 0
+end
+
+function RNMapTileset:getTileOffsetY()
+  return self.tileoffset and self.tileoffset.y or 0
+end
+
 function RNMapTileset:getTilesetsSize()
     return self.tilesetsSize
 end

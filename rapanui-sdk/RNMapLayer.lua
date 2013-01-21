@@ -158,7 +158,12 @@ function RNMapLayer:initLayer(x, y, tileset, drawmode)
     self.grid = MOAIGrid.new()
     self.grid:setRepeat(false)
 
-    self.grid:setSize(self:getCols(), self:getRows(), tileset:getTileWidth(), tileset:getTileHeight(), 0, 0, tileset:getTileWidth(), tileset:getTileHeight())
+    self.grid:setSize(
+        self:getCols(), self:getRows(),
+        self.parentMap.tilewidth, self.parentMap.tileheight,
+        tileset:getTileOffsetX(), tileset:getTileOffsetY(),
+        tileset:getTileWidth(), tileset:getTileHeight()
+      )
 
     local tile_idx_delta = 0
     if tileset.firstgid then
