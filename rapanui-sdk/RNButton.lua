@@ -200,8 +200,11 @@ function RNButton:setVisible(isVisible)
             self.text:setVisible(false);
         end
 
-        if self.rnImageDisabled ~= nil then
+        if self.rnImageDefault ~= nil then
             self.rnImageDefault:setVisible(false)
+        end
+
+        if self.rnImageDisabled ~= nil then
             self.rnImageDisabled:setVisible(false)
         end
     end
