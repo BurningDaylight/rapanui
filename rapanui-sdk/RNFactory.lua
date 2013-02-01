@@ -76,7 +76,14 @@ function RNFactory.init()
     --  lwidth, lheight from the SDConfig.lua
 
     MOAISim.openWindow(name, screenlwidth, screenHeight)
-    RNFactory.screen:initWith(lwidth, lheight, screenlwidth, screenHeight)
+
+    if config.hackishly_init_viewport then
+      local max_dim = lwidth > lheight and lwidth or lheight
+      local max_screen_dim = screenlwidth > screenHeight and screenlwidth or screenHeight
+      RNFactory.screen:initWith(max_dim, max_dim, max_screen_dim, max_screen_dim)
+    else
+      RNFactory.screen:initWith(lwidth, lheight, screenlwidth, screenHeight)
+    end
 
     RNFactory.width = lwidth
     RNFactory.height = lheight
