@@ -377,6 +377,10 @@ function RNGroup:setLevel(value)
     if self.prop ~= nil then
         self:setPriority(value)
     end
+
+    if self.levels then
+      self.levels[value] = value
+    end
 end
 
 function RNGroup:setParentGroup(group)
