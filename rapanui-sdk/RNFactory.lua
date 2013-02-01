@@ -14,12 +14,15 @@
 
 RNFactory = {}
 
+-- TODO: FIXME: Remove next lines, unused globals
+--[[
 contentCenterX = nil
 contentCenterY = nil
 contentHeight = nil
 contentWidth = nil
 contentScaleX = nil
 contentScaleY = nil
+contentWidth = nil
 screenOriginX = nil
 screenOriginY = nil
 statusBarHeight = nil
@@ -27,11 +30,15 @@ viewableContentHeight = nil
 viewableContentWidth = nil
 HiddenStatusBar = "HiddenStatusBar"
 CenterReferencePoint = "CenterReferencePoint"
+]]
 
 RNFactory.screen = RNScreen:new()
 
+-- TODO: FIXME: Remove next lines, unused globals
+--[[
 groups = {}
 groups_size = 0
+]]
 
 RNFactory.mainGroup = RNGroup:new()
 RNFactory.mainGroup.name = "mainGroup"
@@ -57,7 +64,8 @@ function RNFactory.init()
         screenlwidth, screenHeight = screenHeight, screenlwidth
     end
 
-    screenX, screenY = nil
+    -- TODO: FIXME: Remove next lines, unused globals
+    -- landscape, device, sizes, screenX, screenY = nil
 
     local name = rawget(_G, 'name') -- looking for *global* 'name'
     if name == nil then
@@ -72,8 +80,9 @@ function RNFactory.init()
     RNFactory.width = lwidth
     RNFactory.height = lheight
 
-    contentWidth = lwidth
-    contentHeight = lheight
+    -- TODO: FIXME: Remove next lines, unused globals
+    -- contentlwidth = lwidth
+    -- contentHeight = lheight
 
     RNFactory.outWidth = RNFactory.width
     RNFactory.outHeight = RNFactory.height
