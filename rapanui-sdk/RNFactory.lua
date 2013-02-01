@@ -67,7 +67,8 @@ function RNFactory.init()
     -- TODO: FIXME: Remove next lines, unused globals
     -- landscape, device, sizes, screenX, screenY = nil
 
-    local name = rawget(_G, 'name') -- looking for *global* 'name'
+
+    local name = config.window_title
     if name == nil then
         name = "mainwindow"
     end
