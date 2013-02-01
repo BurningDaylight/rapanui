@@ -130,9 +130,11 @@ function RNButton:initWith(imageDefault, imageOver, imageDisabled, rntext)
         if self.enabled then
             event.target = self
 
-            if self.rnImageOver ~= nil then
-
+            if self.rnImageDefault ~= nil then
                 self.rnImageDefault:setVisible(false)
+            end
+
+            if self.rnImageOver ~= nil then
                 self.rnImageOver:setVisible(true)
             end
 
@@ -151,6 +153,9 @@ function RNButton:initWith(imageDefault, imageOver, imageDisabled, rntext)
 
             if self.rnImageOver ~= nil then
                 self.rnImageOver:setVisible(false)
+            end
+
+            if self.rnImageDefault ~= nil then
                 self.rnImageDefault:setVisible(true)
             end
 
@@ -166,16 +171,20 @@ end
 function RNButton:disable()
     self.enabled = false
 
-    if self.rnImageDisabled ~= nil then
+    if self.rnImageDefault ~= nil then
         self.rnImageDefault:setVisible(false)
+    end
+    if self.rnImageDisabled ~= nil then
         self.rnImageDisabled:setVisible(true)
     end
 end
 
 function RNButton:enable()
     self.enabled = true
-    if self.rnImageDisabled ~= nil then
+    if self.rnImageDefault ~= nil then
         self.rnImageDefault:setVisible(true)
+    end
+    if self.rnImageDisabled ~= nil then
         self.rnImageDisabled:setVisible(false)
     end
 end
@@ -200,8 +209,11 @@ function RNButton:setVisible(isVisible)
             self.text:setVisible(false);
         end
 
-        if self.rnImageDisabled ~= nil then
+        if self.rnImageDefault ~= nil then
             self.rnImageDefault:setVisible(false)
+        end
+
+        if self.rnImageDisabled ~= nil then
             self.rnImageDisabled:setVisible(false)
         end
     end
