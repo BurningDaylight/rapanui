@@ -325,7 +325,7 @@ end
 
 
 function RNGroup:setVisible(value)
-    for i = 0, self.numChildren - 1 do
+    for i = 1, self.numChildren do
         local anObject = self.displayObjects[i]
         if anObject ~= nil then
             if anObject.getType ~= nil then
