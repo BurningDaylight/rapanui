@@ -112,10 +112,10 @@ function RNMapLayer:getRowAndColFromCoordinates(xx, yy, aTileset)
     local map = self.parentMap
     local tileW = aTileset:getTileWidth()
     local tileH = aTileset:getTileHeight()
-    for col = 0, map.layers[1]:getCols() - 1 do
+    for col = 0, map.layers[0]:getCols() - 1 do
         if xx >= tileW * (col + 1) - tileW + map.x and xx <= tileW * (col + 1) + map.x then
-            for row = 0, map.layers[1]:getRows() - 1 do
-                local tileIdx = map.layers[1]:getTilesAt(row, col)
+            for row = 0, map.layers[0]:getRows() - 1 do
+                local tileIdx = map.layers[0]:getTilesAt(row, col)
                 if yy >= tileH * (row + 1) - tileH + map.y and yy <= tileH * (row + 1) + map.y then
                     return row, col
                 end
