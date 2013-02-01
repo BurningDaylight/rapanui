@@ -893,7 +893,7 @@ end
 
 function RNObject:setLevel(value)
     self.prop:setPriority(value)
-    self.parentGroup:inserLevel(self:getLevel())
+    self.parentGroup:insertLevel(self:getLevel())
 end
 
 function RNObject:getLevel()
@@ -910,7 +910,7 @@ end
 
 function RNObject:putOver(object)
     self.prop:setPriority(object:getLevel() + 1)
-    self.parentGroup:inserLevel(self:getLevel())
+    self.parentGroup:insertLevel(self:getLevel())
 end
 
 function RNObject:setTileScaleX(value)
