@@ -659,8 +659,10 @@ params.letterWidth
 params.letterHeight
     ]]
 
-    local charcodes, endsizex, sizey, sizex, left, top, scaleX, scaleY, charWidth, charHeight, image, parentGroup
-    local hAlignment, vAlignment
+    local charcodes, endsizex, sizey, sizex, left, top, scaleX, scaleY,
+          charWidth, charHeight, image, parentGroup, hAlignment, vAlignment
+
+
 
     if params.image ~= nil then
         image = params.image
@@ -693,11 +695,11 @@ params.letterHeight
     end
 
     if params.hAlignment ~= nil then
-        hAlignment = params.hAlignment
+      hAlignment = params.hAlignment
     end
 
     if params.vAlignment ~= nil then
-        vAlignment = params.vAlignment
+      vAlignment = params.vAlignment
     end
 
     local o = RNBitmapText:new()
