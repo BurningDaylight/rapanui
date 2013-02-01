@@ -991,7 +991,7 @@ function RNObject:getLocation()
 end
 
 function RNObject:getX()
-    if self.isPhyisic == false then
+    if self.isPhysical == false then
         return self.x
     else
         return self.physicObject:getX()
@@ -999,7 +999,7 @@ function RNObject:getX()
 end
 
 function RNObject:getY()
-    if self.isPhyisic == false then
+    if self.isPhysical == false then
         return self.y
     else
         return self.physicObject:getY()
