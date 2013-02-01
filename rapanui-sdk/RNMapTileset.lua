@@ -142,7 +142,14 @@ function RNMapTileset:getTileDeck2D()
     if self.tileDeck == nil then
         self.tileDeck = MOAITileDeck2D.new()
         self.tileDeck:setTexture(self.image.source)
-        self.tileDeck:setSize(self.image.width / self:getTileWidth(), self.image.height / self:getTileHeight())
+
+        self.tileDeck:setSize(
+            math.floor(self.image.width / self:getTileWidth()),
+            math.floor(self.image.height / self:getTileHeight()),
+            self:getTileWidth() / self.image.width,
+            self:getTileHeight() / self.image.height
+          )
+
         self.tileDeck:setRect(-0.5, 0.5, 0.5, -0.5)
     end
 
