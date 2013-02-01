@@ -150,6 +150,14 @@ function RNMapLayer:setLevel(level)
   end
 end
 
+function RNMapLayer:getLevel()
+  if not self.prop then
+    return nil
+  end
+
+  return self.prop:getPriority()
+end
+
 function RNMapLayer:getProp()
     return self.prop
 end
